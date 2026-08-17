@@ -18,10 +18,10 @@ Apri PowerShell ed esegui:
 winget install BurntSushi.ripgrep
 ```
 
-### 📌 Il Problema
+### Il Problema
 A seguito di alcuni aggiornamenti di VS Code, l'eseguibile di **ripgrep** (`rg.exe`) viene spostato in percorsi diversi o rimosso dalle posizioni standard. Estensioni come **Roo Code** continuano a cercarlo nel vecchio percorso hardcoded (`...@vscode\ripgrep\bin\rg.exe`), causando il fallimento della ricerca nel codebase e dell'indicizzazione.
 
-### 🛠️ La Soluzione
+### La Soluzione
 La soluzione consiste nel rintracciare dove si trova attualmente `rg.exe` all'interno dell'installazione locale di VS Code e copiarlo nel percorso esatto che l'estensione si aspetta, ricreando la cartella mancante.
 
 Nelle versioni recenti, la vera applicazione si trova spesso in una sottocartella che riporta l'hash della build (es. `a5b5009513`). 
